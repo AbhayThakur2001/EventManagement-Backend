@@ -1,0 +1,22 @@
+server:
+    port:   8081
+spring:
+    application:
+        name:   EVENT-SERVICE
+    datasource:
+        driver-class-name:  com.mysql.cj.jdbc.Driver
+        password:   Maybank@123
+        url:    jdbc:mysql://localhost:3306/eventservicedb
+        username:   root
+    jpa:
+        show-sql:   true
+        hibernate:
+            ddl-auto:   create
+    config:
+            import: configserver:http://localhost:9296
+# eureka:
+#     instance:
+#         prefer-ip-address:  true
+#     client:
+#         fetch-registry: true
+#         register-with-eureka:   true
