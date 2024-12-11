@@ -3,6 +3,7 @@ package com.cloudthat.eventservice.model;
 //package com.cloudthat.eventservice.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.AssertFalse;
 import org.springframework.http.HttpStatus;
 
 import java.util.Date;
@@ -122,4 +123,7 @@ public class ErrorResponse {
     public void setSuccess(Boolean success) {
         this.success = success;
     }
+
+//    public AssertFalse builder() {
+//    }
 }

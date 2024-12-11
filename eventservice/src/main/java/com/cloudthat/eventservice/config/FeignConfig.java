@@ -1,0 +1,19 @@
+//package com.cloudthat.eventservice.config;
+//
+//public class FeignConfig {
+//}
+package com.cloudthat.eventservice.config;
+
+import com.cloudthat.eventservice.external.decoder.CustomErrorDecoder;
+import feign.codec.ErrorDecoder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class FeignConfig {
+
+    @Bean
+    ErrorDecoder errorDecoder(){
+        return new CustomErrorDecoder();
+    }
+}

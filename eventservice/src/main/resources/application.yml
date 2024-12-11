@@ -2,7 +2,7 @@ server:
     port:   8081
 spring:
     application:
-        name:   EVENT-SERVICE
+        name:   EVENTSERVICE
     datasource:
         driver-class-name:  com.mysql.cj.jdbc.Driver
         password:   Maybank@123

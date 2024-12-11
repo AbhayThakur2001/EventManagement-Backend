@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/eventservice/pom.xml" />
         <option value="$PROJECT_DIR$/venueservice/pom.xml" />
         <option value="$PROJECT_DIR$/configserver/pom.xml" />
+        <option value="$PROJECT_DIR$/apigateway/pom.xml" />
       </list>
     </option>
   </component>

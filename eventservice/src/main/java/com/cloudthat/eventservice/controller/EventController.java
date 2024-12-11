@@ -51,6 +51,7 @@ package com.cloudthat.eventservice.controller;
 
 import com.cloudthat.eventservice.model.ApiResponse;
 import com.cloudthat.eventservice.model.EventModel;
+import com.cloudthat.eventservice.model.EventResponse;
 import com.cloudthat.eventservice.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -94,5 +95,10 @@ public class EventController {
     public ResponseEntity<ApiResponse> deleteEvent(@PathVariable("eventId") Long eventId){
         String deleteMessage = eventService.deleteEvent(eventId);
         return new ResponseEntity<>(new ApiResponse(true, "Event deleted Succesfully", deleteMessage), HttpStatus.OK);
+    }
+    @GetMapping("/{eventId}/details")
+    public ResponseEntity<ApiResponse> getEventDetails(@PathVariable("eventId") Long eventId){
+        EventResponse eventModel1 = eventService.getEventDetails(eventId);
+        return new ResponseEntity<>(new ApiResponse(true, "Event Fetched Succesfully", eventModel1), HttpStatus.OK);
     }
 }

@@ -1,0 +1,30 @@
+server:
+    port: 9090
+spring:
+    application:
+        name: API-GATEWAY
+    config:
+        import:
+            - configserver:http://localhost:9296
+    cloud:
+        gateway:
+            routes:
+                - id: EVENTSERVICE
+                  uri: lb://EVENTSERVICE
+                  predicates:
+                      - Path=/api/events**, /api/categories**
+
+                - id: VENUESERVICE
+                  uri: lb://VENUESERVICE
+                  predicates:
+                      - Path=/api/venues**
+
+        discovery:
+            enabled: true
+okta:
+    oauth2:
+        issuer: https://dev-47657070.okta.com/oauth2/default
+        audience:   api://default
+        client-id:  0oalr49q6kpUa2j3V5d7
+        client-secret:  QrCj2r34PswC3EzyUUF0qRFDGYfvhyqiq_Uz4aZywJnCkOHJphkuqAxRo3mTRbTm
+        scopes: openid,email,profile,offline_access
